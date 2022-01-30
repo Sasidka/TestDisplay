@@ -1,0 +1,52 @@
+﻿<Page x:Class="TestDisplay.Views.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestDisplay.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="EditPage">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Center">
+            <Button Width="100"
+                    Height="30"
+                    Margin="10 0 0 0"
+                    Content="Назад"
+                    Click="BackBtn_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                <TextBlock Text="Логин"
+                           Width="60"/>
+                <!-- user это переменная из c# кода -->
+                <TextBox Width="150"
+                         x:Name="EditLogTB"
+                         Text="{Binding user.Login}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Пароль"
+                           Width="60"/>
+                <TextBox Width="150"
+                         x:Name="EditPassTB"
+                         Text="{Binding user.Password}"/>
+            </StackPanel>
+            <Button Width="100"
+                    Height="30"
+                    Content="Сохранить"
+                    Click="SaveBtn_Click"
+                    Margin="0 10"/>
+        </StackPanel>
+    </Grid>
+</Page>
